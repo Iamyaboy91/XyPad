@@ -8,6 +8,11 @@
         <FILE id="zqB0cg" name="xyPad.cpp" compile="1" resource="0" file="Source/xyPad.cpp"/>
         <FILE id="Igi49m" name="xyPad.h" compile="0" resource="0" file="Source/xyPad.h"/>
       </GROUP>
+      <GROUP id="{AAB79451-8A42-DF39-0FE4-014D01C6D229}" name="Panel">
+        <FILE id="gnPvEO" name="Panel1.h" compile="0" resource="0" file="Source/Panel1.h"/>
+        <FILE id="joe16B" name="Panel2.h" compile="0" resource="0" file="Source/Panel2.h"/>
+        <FILE id="J8BAKV" name="Panel3.h" compile="0" resource="0" file="Source/Panel3.h"/>
+      </GROUP>
       <FILE id="NHoAN4" name="PluginProcessor.cpp" compile="1" resource="0"
             file="Source/PluginProcessor.cpp"/>
       <FILE id="ZmsiZz" name="PluginProcessor.h" compile="0" resource="0"
