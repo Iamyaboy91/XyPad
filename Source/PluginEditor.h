@@ -11,6 +11,7 @@
 #include <JuceHeader.h>
 #include "PluginProcessor.h"
 #include "xyPad.h"
+#include "ConfigurableSlider.h"
 #include "Panel1.h"
 #include "Panel2.h"
 #include "Panel3.h"

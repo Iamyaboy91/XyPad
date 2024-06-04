@@ -5,6 +5,8 @@
   <MAINGROUP id="Vqtv8x" name="XyPad">
     <GROUP id="{60C9BFE8-8C1C-2DE2-031A-48EC53071C6B}" name="Source">
       <GROUP id="{51716D3C-7623-F545-C14F-5BBCC9028FF3}" name="Component">
+        <FILE id="aokhbT" name="ConfigurableSlider.h" compile="0" resource="0"
+              file="Source/ConfigurableSlider.h"/>
         <FILE id="zqB0cg" name="xyPad.cpp" compile="1" resource="0" file="Source/xyPad.cpp"/>
         <FILE id="Igi49m" name="xyPad.h" compile="0" resource="0" file="Source/xyPad.h"/>
       </GROUP>
