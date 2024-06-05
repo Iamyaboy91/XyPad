@@ -13,47 +13,27 @@
 XyPadAudioProcessorEditor::XyPadAudioProcessorEditor (XyPadAudioProcessor& p)
     : AudioProcessorEditor (&p),
       audioProcessor (p),
-gainAttachment(p.getApvts(), "GAIN", gainSlider),
-panAttachment(p.getApvts(), "PAN", panSlider)
+      parameters(p.getApvts()),
+      panel1(parameters),
+      panel2(parameters)
 {
-    addAndMakeVisible(gainSlider);
-    addAndMakeVisible(panSlider);
-    addAndMakeVisible(gainLabel);
-    addAndMakeVisible(panLabel);
-    addAndMakeVisible(xyPad);
+    addAndMakeVisible(tabbedComponent);
+    tabbedComponent.addTab("Single Slider", juce::Colours::transparentBlack, &panel1, false);
+    tabbedComponent.addTab("Multiple Configurable Sliders", juce::Colours::transparentBlack, &panel2, false);
     
-    gainLabel.setJustificationType(juce::Justification::centred);
-    panLabel.setJustificationType(juce::Justification::centred);
-    gainLabel.attachToComponent(&gainSlider, false);
-    panLabel.attachToComponent(&panSlider, false);
-    xyPad.registerSlider(&gainSlider, Gui::xyPad::Axis::Y);
-    xyPad.registerSlider(&panSlider, Gui::xyPad::Axis::X);
-    
-    
-    setSize (500, 300);
+    setSize (800, 400);
     setResizable(true, true);
 
-}
-
-XyPadAudioProcessorEditor::~XyPadAudioProcessorEditor()
-{
-    xyPad.deregisterSlider(&gainSlider);
-    xyPad.deregisterSlider(&panSlider);
 }
 
 //==============================================================================
 void XyPadAudioProcessorEditor::paint (juce::Graphics& g)
 {
-    g.fillAll(getLookAndFeel().findColour(juce::ResizableWindow::backgroundColourId));
-    
+    g.setGradientFill(juce::ColourGradient{ juce::Colours::darkgrey.brighter(0.2f), getLocalBounds().toFloat().getCentre(), juce::Colours::darkgrey.darker(0.8f), {}, true });
+    g.fillRect(getLocalBounds());
 }
 
 void XyPadAudioProcessorEditor::resized()
 {
-    const auto container = getLocalBounds().reduced(20);
-    auto bounds = container;
-    
-    gainSlider.setBounds(bounds.removeFromLeft(container.proportionOfWidth(0.25f)));
-    xyPad.setBounds(bounds.removeFromLeft((container.proportionOfWidth(0.5))));
-    panSlider.setBounds(bounds);
+    tabbedComponent.setBounds(getLocalBounds());
 }

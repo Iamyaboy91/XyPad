@@ -82,7 +82,7 @@ private:
     using SliderAttachment = juce::AudioProcessorValueTreeState::SliderAttachment;
     juce::AudioProcessorValueTreeState& parameters;
     
-    juce::Label gainLabel { "gainLabel", "Gain" }, panLabel{"panLabel", "Pan"};
+    juce::Label gainLabel { "gainLabel", "gain" }, panLabel{"panLabel", "gan"};
     
     juce::Slider gainSlider{ juce::Slider::SliderStyle::RotaryHorizontalVerticalDrag, juce::Slider::TextBoxBelow };
     juce::Slider panSlider{ juce::Slider::SliderStyle::RotaryHorizontalVerticalDrag, juce::Slider::TextBoxBelow };
