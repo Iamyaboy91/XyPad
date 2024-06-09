@@ -21,8 +21,8 @@ class Panel1 : public juce::Component
     public:
     Panel1(juce::AudioProcessorValueTreeState& apvts) :
             parameters(apvts),
-    gainAttachment(parameters, "gain", gainSlider),
-    panAttachment(parameters, "pan", panSlider)
+    gainAttachment(parameters, "GAIN", gainSlider),
+    panAttachment(parameters, "PAN", panSlider)
     {
         addAndMakeVisible(gainSlider);
         addAndMakeVisible(panSlider);
@@ -82,7 +82,7 @@ private:
     using SliderAttachment = juce::AudioProcessorValueTreeState::SliderAttachment;
     juce::AudioProcessorValueTreeState& parameters;
     
-    juce::Label gainLabel { "gainLabel", "gain" }, panLabel{"panLabel", "gan"};
+    juce::Label gainLabel { "gainLabel", "Gain" }, panLabel{"panLabel", "Pan"};
     
     juce::Slider gainSlider{ juce::Slider::SliderStyle::RotaryHorizontalVerticalDrag, juce::Slider::TextBoxBelow };
     juce::Slider panSlider{ juce::Slider::SliderStyle::RotaryHorizontalVerticalDrag, juce::Slider::TextBoxBelow };

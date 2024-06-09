@@ -20,8 +20,8 @@ class Panel2 : public juce::Component
 public:
         Panel2(juce::AudioProcessorValueTreeState& apvts) :
                 parameters(apvts),
-                gainAttachment(parameters, "gain", gainSlider),
-                panAttachment(parameters, "pan", panSlider)
+                gainAttachment(parameters, "GAIN", gainSlider),
+                panAttachment(parameters, "PAN", panSlider)
     {
         addAndMakeVisible(gainSlider);
         addAndMakeVisible(panSlider);
